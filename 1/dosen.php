@@ -8,7 +8,7 @@ include "auth_user.php";
 <script type="text/javascript">
  $(function(){
   $(".datepicker").datepicker({
-      format: 'yyyy-mm-dd',
+      format: 'Y-m-d',
       autoclose: true,
       todayHighlight: true,
   });

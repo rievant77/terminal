@@ -25,9 +25,10 @@ include "../koneksi.php";
 		$naik	 		= $_POST["naik"];
 		$turun	 		= $_POST["turun"];
 		$kel	 		= implode(', ' , $_POST['kel']);
+		$tgl			= date('Y-m-d');
 
 		mysqli_query($konek, "UPDATE angkutan SET po='$po', supir='$supir', kp='$kp', uji='$uji', 
-						naik='$naik', turun='$turun', kel='$kel' WHERE noken='$noken'");
+						naik='$naik', turun='$turun', kel='$kel', tgl='$tgl' WHERE noken='$noken'");
 		header("Location: dosen.php");
 	}
 

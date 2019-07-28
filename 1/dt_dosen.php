@@ -14,7 +14,7 @@
 				</thead>
 				<tbody>
 					<?php
-						$queryangkutan = mysqli_query ($konek, "SELECT noken, po, supir, kp, DATE_FORMAT(uji, '%d-%m-%Y')as uji, naik, turun, kel FROM angkutan");
+						$queryangkutan = mysqli_query ($konek, "SELECT noken, po, supir, kp, DATE_FORMAT(uji, '%d-%m-%Y')as uji, naik, turun, kel FROM angkutan ORDER BY tgl DESC");
 
 						if($queryangkutan == false){
 							die ("Terjadi Kesalahan : ". mysqli_error($konek));

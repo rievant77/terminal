@@ -24,9 +24,9 @@ if(isset($_POST["simpan"])) {
 		//$jml	 		= $_POST["jml"];
 		//$hasil	 		= $naik + $turun;
 		$kel	 		= implode(', ' , $_POST['kel']);
-		$tgl			= date('d-m-Y');
+		$tgl			= date('Y-m-d');
 
-		mysqli_query($konek, "INSERT INTO angkutan VALUES ('$noken', '$po', '$supir', '$kp', '$uji', '$naik', '$turun', '$kel', $tgl)");
+		mysqli_query($konek, "INSERT INTO angkutan VALUES ('$noken', '$po', '$supir', '$kp', '$uji', '$naik', '$turun', '$kel', '$tgl')");
 		header("Location: dosen.php");
 	}
 
