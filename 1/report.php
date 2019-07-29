@@ -29,18 +29,18 @@ include "auth_user.php";
       <script type="text/javascript">
 $(function() {
 
-  $('input[name="date"]').daterangepicker({
+  $('input[name="daritgl"]').daterangepicker({
       autoUpdateInput: false,
       locale: {
           format : 'YYYY-MM-DD'
       }
   });
 
-  $('input[name="date"]').on('apply.daterangepicker', function(ev, picker) {
+  $('input[name="daritgl"]').on('apply.daterangepicker', function(ev, picker) {
       $(this).val(picker.startDate.format('YYYY-MM-DD') + "' And '" + picker.endDate.format('YYYY-MM-DD'));
   });
 
-  $('input[name="date"]').on('cancel.daterangepicker', function(ev, picker) {
+  $('input[name="daritgl"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('');
   });
 
@@ -127,7 +127,7 @@ $(function() {
               <div class="modal-body">
               <div class="form-group">
                 <label>Masukan Tanggal</label>
-                <input type="text" id="date" name="date" class="form-control"></div>
+                <input type="text" id="daritgl" name="daritgl" class="form-control"></div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button class="btn btn-primary" type="submit" name="submit" value="proses"
                     onclick="return valid();">Print</button>
