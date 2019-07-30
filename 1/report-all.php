@@ -45,7 +45,7 @@ $pdf->SetFont('Arial','',9);
 
 $no=1;
 
-$queryangkutan = mysqli_query ($konek, "SELECT noken, po, supir, kp, tgl, DATE_FORMAT(uji, '%d-%m-%Y')as uji FROM angkutan WHERE tgl BETWEEN '$cetak' ORDER BY tgl DESC");
+$queryangkutan = mysqli_query ($konek, "SELECT noken, po, supir, kp, tgl, DATE_FORMAT(uji, '%d-%m-%Y')as uji FROM angkutan ORDER BY tgl DESC");
 while($row = mysqli_fetch_array($queryangkutan)){
 
 	$pdf->Cell(1, 0.8, $no, 1, 0, 'C');

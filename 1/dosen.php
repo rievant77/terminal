@@ -4,17 +4,6 @@ session_start();
 include "../koneksi.php";
 include "auth_user.php";
 ?>
-
-<script type="text/javascript">
- $(function(){
-  $(".datepicker").datepicker({
-      format: 'yyyy-mm-dd',
-      autoclose: true,
-      todayHighlight: true,
-  });
- });
-</script>
-
 <!DOCTYPE html>
 <html>
  <head>
@@ -24,6 +13,35 @@ include "auth_user.php";
 	<?php
 		include "bundle_css.php";
 	?>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+$('input[name="daritgl"]').daterangepicker({
+autoUpdateInput: false,
+locale: {
+	format : 'YYYY-MM-DD'
+}
+});
+$('input[name="daritgl"]').on('apply.daterangepicker', function(ev, picker) {
+$(this).val(picker.startDate.format('YYYY-MM-DD') + "' And '" + picker.endDate.format('YYYY-MM-DD'));
+});
+$('input[name="daritgl"]').on('cancel.daterangepicker', function(ev, picker) {
+$(this).val('');
+});
+});
+</script>
+
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -44,7 +62,6 @@ include "auth_user.php";
               <li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
               <li><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
 			  <li class="active"><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
-			  <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li-->
 			  <li><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
 		  </ul>	  
         </section>
@@ -76,7 +93,7 @@ include "auth_user.php";
 
 				<a href="#"><button class="btn btn-primary" type="button" data-target="#exampleModal" data-toggle="modal"><i class="fa fa-print"></i> Print Berdasarkan Tanggal Input</button></a>
 
-				<a href="report-all.php"><button class="btn btn-primary" type="button" data-target="#exampleModal" data-toggle="modal"><i class="fa fa-print"></i> Print Semua</button></a>
+				<a href="report-all.php" target="_blank"><button class="btn btn-primary" type="button"><i class="fa fa-print"></i> Print Semua</button></a>
 
                   <br></br>
 
@@ -203,40 +220,34 @@ include "auth_user.php";
 			</div>
 		</div>
 		
-		<!-- Modal Popup Dosen Lihat -->
-		<form method="POST" action="report-filter.php" target="_blank" >
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Print Berdasarkan Tanggal</h4>
+		<!-- Modal -->
+		<form method="$_GET" action="report-filter.php" target="_blank">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><small>PRINT FILTER DATE</small></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <div class="form-group">
+                <label>Masukan Tanggal</label>
+                <input type="text" id="daritgl" name="daritgl" class="form-control"></div>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button class="btn btn-primary" type="submit" name="submit" value="proses"
+                    onclick="return valid();">Print</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
-
-
-    <div class="modal-body">
-
-      <div class="form-group">
-        <div class="form-group">
-        <label class="control-label">Dari Tanggal</label>
-        <input type="date" name="from" id="stayf" value="<?php echo date('Y-m-d'); ?>" class="form-control">
-    </div>
-    <div class="form-group">
-        <label class="control-label">Sampai Tanggal</label>
-        <input type="date" name="end" id="stayf" value="<?php echo date('Y-m-d'); ?>" class="form-control">
-    </div>                
-    <div class="form-group">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button class="btn btn-success" type="submit" name="submit" value="proses" onclick="return valid();">Print</button>
-    </div>
-</div>
-</div>  
-</div>
-</div>
-</div>
-</form>
-<!--end modal-->
+    </form>
+    <!--end modal-->
 
 		<!-- Modal Popup Dosen Edit -->
 		<div id="ModalEditDosen" class="modal fade" tabindex="-1" role="dialog"></div>
