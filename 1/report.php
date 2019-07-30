@@ -99,10 +99,11 @@ $(function() {
 
               </div><!-- /.box-header -->
               <div class="box-body">
+                <a href="report-all.php" target="_blank"><button class="btn btn-success" type="button"><i class="fa fa-print"></i> Report Semua</button></a>
+              </div><!-- /.box-body -->
+              <div class="box-body">
                 <a href="#"><button class="btn btn-success" type="button" data-target="#exampleModal"
                     data-toggle="modal"><i class="fa fa-print"></i> Report Berdasarkan Tanggal Input</button></a>
-                <br></br>
-
               </div><!-- /.box-body -->
             </div><!-- /.box -->
           </div><!-- /.col -->
