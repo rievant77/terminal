@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2019 at 08:12 AM
+-- Generation Time: Jul 30, 2019 at 04:52 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -36,6 +36,7 @@ CREATE TABLE `angkutan` (
   `uji` varchar(32) NOT NULL,
   `naik` int(50) NOT NULL,
   `turun` int(50) NOT NULL,
+  `jml` int(50) NOT NULL,
   `kel` varchar(500) NOT NULL,
   `tgl` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -44,14 +45,19 @@ CREATE TABLE `angkutan` (
 -- Dumping data for table `angkutan`
 --
 
-INSERT INTO `angkutan` (`noken`, `po`, `supir`, `kp`, `uji`, `naik`, `turun`, `kel`, `tgl`) VALUES
-('54fs', 'MARITA', 'Dedi Rustandi', '3455fs', '2019-07-22', 12, 1, 'Ban Cadangan, Segitiga Pengaman, Dongkrak', '2019-07-25'),
-('87655', 'MARITA', 'UDIN', 'bfgb877', '2019-07-22', 3, 3, 'Segitiga Pengaman, Dongkrak, Lampu Senter', '2019-07-25'),
-('b3', 'MARITA', 'cecep', 'wer3', '2019-07-22', 12, 4, 'Ban Cadangan', '0000-00-00'),
-('gs5566', 'MARITA', 'ASEP', 'we32', '2019-07-22', 1, 1, 'Ban Cadangan', '0000-00-00'),
-('hh', 'MARITA', 'Dedi Rustandi', 'hh', '2019-07-23', 1, 1, 'Dongkrak', '0000-00-00'),
-('kllkj554', 'MARITA', 'UDIN', '33fcx', '2019-07-22', 1, 4, 'Ban Cadangan', '0000-00-00'),
-('qq12', 'MARITA', 'UDIN', 'wer3', '2019-07-23', 3, 4, 'Pembuka Roda', '0000-00-00');
+INSERT INTO `angkutan` (`noken`, `po`, `supir`, `kp`, `uji`, `naik`, `turun`, `jml`, `kel`, `tgl`) VALUES
+('87655', 'MARITA', 'UDIN', 'bfgb877', '2019-07-22', 3, 3, 0, 'Segitiga Pengaman, Dongkrak, Lampu Senter', '2019-07-25'),
+('b3', 'MARITA', 'cecep', 'wer3', '2019-07-22', 12, 4, 0, 'Ban Cadangan, Segitiga Pengaman', '0000-00-00'),
+('cxx', 'MARITA', 'Dedi Rustandi', 'wer3', '2019-07-29', 1, 1, 2, 'Ban Cadangan, Segitiga Pengaman', '2019-07-29'),
+('dddd', 'MARITA', 'Dedi Rustandi', 'wer3', '2019-07-29', 3, 34, 0, 'Ban Cadangan', '2019-07-29'),
+('dss', 'MARITA', 'Dedi Rustandi', '3455fs', '2019-07-29', 1, 1, 0, 'Ban Cadangan', '0000-00-00'),
+('gs5566', 'MARITA', 'ASEP', 'we32', '2019-07-22', 1, 1, 0, 'Ban Cadangan', '0000-00-00'),
+('hh', 'MARITA', 'Dedi Rustandi', 'hh', '2019-07-23', 1, 1, 0, 'Dongkrak, Lampu Senter', '0000-00-00'),
+('hh12', 'MARITA', 'qq', 'qqws', '2019-07-29', 2, 2, 0, 'Ban Cadangan, Segitiga Pengaman', '0000-00-00'),
+('kllkj554', 'MARITA', 'UDIN', '33fcx', '2019-07-22', 1, 4, 0, 'Ban Cadangan, Segitiga Pengaman, Dongkrak, Pembuka Roda, Lampu Senter', '2019-07-29'),
+('mmm', 'MARITA', 'UDIN', 'wer3', '2019-07-29', 1, 2, 0, 'Dongkrak, Pembuka Roda', '2019-07-29'),
+('qq12', 'MARITA', 'UDIN', 'wer3', '2019-07-23', 3, 4, 0, 'Dongkrak, Pembuka Roda', '0000-00-00'),
+('sssss', 'MARITA', 'Dedi Rustandi', 'wer3', '2019-07-29', 1, 1, 0, 'Ban Cadangan', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -86,6 +92,7 @@ INSERT INTO `dosen` (`NIP`, `Nama_Dosen`, `Tanggal_Lahir`, `JK`, `No_Telp`, `Ala
 CREATE TABLE `user` (
   `Id_User` int(11) NOT NULL,
   `Id_Usergroup_User` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Foto` varchar(150) NOT NULL DEFAULT 'ids.jpg'
@@ -95,10 +102,33 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`Id_User`, `Id_Usergroup_User`, `Username`, `Password`, `Foto`) VALUES
-(1, 1, 'admin', '$2y$10$V7zDd2Fz3QBmWFz3UnZBM.vjDK.AOTTjIdssUY8rhcBjEEJrxY7ma', 'ids.jpg'),
-(18, 2, '098980', '$2y$10$25GSpBPnHynFHGafwjdyUeuwy6kF/6/pKLBSVdxk61suyPf5Tsugu', 'ids.jpg'),
-(19, 3, 'D980098', '$2y$10$EEvgrytjn7UkxTXtefDx0ux60r.6jGwmo3pYS.2VybRApkvm97rGi', 'ids.jpg');
+INSERT INTO `user` (`Id_User`, `Id_Usergroup_User`, `nama`, `Username`, `Password`, `Foto`) VALUES
+(1, 1, 'admin', 'admin', '$2y$10$V7zDd2Fz3QBmWFz3UnZBM.vjDK.AOTTjIdssUY8rhcBjEEJrxY7ma', 'ids.jpg'),
+(27, 3, 'kadis', 'kadis', '$2y$10$LFQHeMNEgQdpqcAxUr8MmO7PscCBcWQiVtt8rgl0o8gXrwGwXmpTW', 'ids.jpg'),
+(28, 2, 'user', 'user', '$2y$10$j6ELSBky1.S1AsgwVvFlAusqmAvyYf0Bm5Vg2AEyepnI.qYcDOZn2', 'ids.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user1`
+--
+
+CREATE TABLE `user1` (
+  `id` int(11) NOT NULL,
+  `nm` varchar(200) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `pwd` varchar(200) NOT NULL,
+  `lvl` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user1`
+--
+
+INSERT INTO `user1` (`id`, `nm`, `username`, `pwd`, `lvl`) VALUES
+(1, '1', 'admin', 'admin', 'admin'),
+(2, '2', 'user', 'user', 'user'),
+(3, '3', 'kadis', 'kadis', 'kadis');
 
 -- --------------------------------------------------------
 
@@ -117,8 +147,8 @@ CREATE TABLE `usergroup` (
 
 INSERT INTO `usergroup` (`Id_Usergroup`, `Nama_Usergroup`) VALUES
 (1, 'Administrator'),
-(2, 'Dosen'),
-(3, 'Mahasiswa');
+(2, 'User'),
+(3, 'KADIS');
 
 --
 -- Indexes for dumped tables
@@ -144,6 +174,12 @@ ALTER TABLE `user`
   ADD KEY `FK_user_usergroup` (`Id_Usergroup_User`);
 
 --
+-- Indexes for table `user1`
+--
+ALTER TABLE `user1`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `usergroup`
 --
 ALTER TABLE `usergroup`
@@ -157,23 +193,19 @@ ALTER TABLE `usergroup`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id_User` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Id_User` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `user1`
+--
+ALTER TABLE `user1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `usergroup`
 --
 ALTER TABLE `usergroup`
   MODIFY `Id_Usergroup` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `FK_user_usergroup` FOREIGN KEY (`Id_Usergroup_User`) REFERENCES `usergroup` (`Id_Usergroup`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

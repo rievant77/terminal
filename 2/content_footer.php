@@ -1,4 +1,4 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs"></div>
-    <strong>Copyright &copy; <?php echo date("Y") ?> IDS Akademik and Created By <a href="https://www.facebook.com/derryikhsan.sholahuddin1">Derry Ikhsan</a></strong>
+    <center><strong>Copyright &copy; <?php echo date("Y") ?></center> </a></strong>
 </footer>

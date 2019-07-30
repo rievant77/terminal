@@ -3,7 +3,7 @@
 if (!isset ($_SESSION["Login"]) || $_SESSION ["Login"] != true){
 	header ("Location: ../pagenotfound.php");
 }
-else if ($_SESSION["Id_Usergroup"] = 3){
+else if ($_SESSION["Id_Usergroup"] = 1){
 	$_SESSION ["Login"] = true;
 }
 else{

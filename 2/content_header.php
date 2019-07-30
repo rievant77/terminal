@@ -1,8 +1,8 @@
 <header class="main-header">
   <!-- Logo -->
   <div class="logo">
-<span class="logo-mini"><img src="../aset/foto/ids.jpg" class="img-circle" alt="Logo" height="50" width="50"></span>
-<span class="logo-lg"><b>IDS Akademik</b></span>
+<span class="logo-mini"><img src="../aset/foto/dishub.jpg" class="img-circle" alt="Logo" height="50" width="50"></span>
+<span class="logo-lg"><b>Terminal</b></span>
 </div>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top" role="navigation">
@@ -28,7 +28,7 @@
     <img src="../aset/foto/<?php echo "".$_SESSION["Foto"]."" ?>" class="img-circle" alt="Foto">
               <!--<h3><p>Akademik</p></h3>-->
     <p style="text-transform:capitalize;">Hi <?php echo "".$_SESSION["Username"]."" ?>, </p>
-    <p>Welcome To IDS Akademik</p>
+    <p>Terminal</p>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">

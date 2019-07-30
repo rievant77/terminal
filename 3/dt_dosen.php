@@ -14,7 +14,7 @@
 				</thead>
 				<tbody>
 					<?php
-						$queryangkutan = mysqli_query ($konek, "SELECT noken, po, supir, kp, DATE_FORMAT(uji, '%d-%m-%Y')as uji, naik, turun, jml, kel FROM angkutan");
+						$queryangkutan = mysqli_query ($konek, "SELECT noken, po, supir, kp, DATE_FORMAT(uji, '%d-%m-%Y')as uji, naik, turun, kel FROM angkutan");
 
 						if($queryangkutan == false){
 							die ("Terjadi Kesalahan : ". mysqli_error($konek));
@@ -30,12 +30,11 @@
 									<td><center>$angkutan[uji]</center></td>
 									<!--td><center>$angkutan[naik]</center></td-->
 									<!--td><center>$angkutan[turun]</center></td-->
-									<td><center>$angkutan[jml]</center></td>
+									<td><center>$angkutan[turun]</center></td>
 									<!--td><center>$angkutan[kel]</center></td-->
 									<td>
-										<a href='lihat.php?noken=$angkutan[noken]'>Lihat | </a>
-										<a href='#' onclick='edit_form(this, ".'"dosen_modal_edit"'.", ".'"noken"'.", ".'"#ModalEditDosen"'.")' id='$angkutan[noken]'>Edit | </a> 
-										<a href='#' onclick='confirm_delete(\"dosen_delete.php?noken=$angkutan[noken]\")'>Hapus</a>
+										<center><a href='lihat.php?noken=$angkutan[noken]'>Lihat</a></center>
+										
 									</td>
 								</tr>";
 						}

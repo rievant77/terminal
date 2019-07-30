@@ -45,7 +45,7 @@ include "auth_user.php";
               <li><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
               <li ><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
               <li ><a href="report.php"><i class="icon fa fa-print"></i><span>Report</span></a></li>
-          <li><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
+          <li><a href="#"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
         </section>
         <!-- /.sidebar -->
       </aside>

@@ -3,7 +3,7 @@
 						<th>Nama</th>
 						<th>Username</th>
 						<th>Usergroup</th>
-						<th>action</th>
+						<th>Password</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -19,18 +19,18 @@
 									<td>$user[nama]</td>
 									<td>$user[Username]</td>
 									<td>$user[Nama_Usergroup]</td>
-									<td>
+									<td>$user[Password]</td>
 								";
-								if($user["Id_User"]==$_SESSION["Id_User"]){
-								echo "
-									<a href='#'>Disable</a>";
-								}else{
-									echo "
-										<a href='#' onClick='confirm_delete(\"user_delete.php?Id_User=$user[Id_User]\")'>Delete</a>";
-								}
-							echo
+								//if($user["Id_User"]==$_SESSION["Id_User"]){
+								//	echo "
+								//		<a href='#'>Disable</a>";
+							//	}else{
+								//	echo "
+							//			<a href='#' onClick='confirm_delete(\"user_delete.php?Id_User=$user[Id_User]\")'>Delete</a>";
+							//	}
+							//echo
 								"
-									</td>
+									
 								</tr>";
 						}
 					?>

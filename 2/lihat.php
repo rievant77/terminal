@@ -54,8 +54,8 @@ $angkutan = mysqli_fetch_array ($queryangkutan);
               <li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
               <li><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
 			        <li class="active"><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
-			        <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li-->
-					<li><a href="#"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
+			        <!--li class="active"><a href="#"><i class="fa fa-user"></i><span>Report</span></a></li>
+					<li><a href="#"><i class="fa fa-user-circle-o"></i><span>User</span></a></li-->
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -117,20 +117,9 @@ $angkutan = mysqli_fetch_array ($queryangkutan);
 		                    	<td><?php echo"$angkutan[turun]";?></td>
 		                    </tr>
 		                    <tr>                                      
-		                    	<td>Jumlah Penumpang</td>
-		                    	<td><center>:</center></td>
-		                    	<td><?php echo"$angkutan[jml]";?></td>
-		                    </tr>
-		                    <tr>                                      
 		                    	<td>Kelengkapan</td>
 		                    	<td><center>:</center></td>
 		                    	<td><?php echo"$angkutan[kel]";?></td>
-		                    </tr>
-
-		                    <tr>                                      
-		                    	<td>Tanggal Input</td>
-		                    	<td><center>:</center></td>
-		                    	<td><?php echo"$angkutan[tgl]";?></td>
 		                    </tr>
 
 

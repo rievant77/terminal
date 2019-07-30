@@ -3,13 +3,23 @@
 session_start();
 include "../koneksi.php";
 include "auth_user.php";
-
 ?>
+
+<script type="text/javascript">
+ $(function(){
+  $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+  });
+ });
+</script>
+
 <!DOCTYPE html>
 <html>
  <head>
     <meta charset="utf-8">
-    <title>IDS Akademik</title>
+    <title>Terminal Pasirhayam</title>
 	<!-- Library CSS -->
 	<?php
 		include "bundle_css.php";
@@ -33,16 +43,10 @@ include "auth_user.php";
           <ul class="sidebar-menu">
               <li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
               <li><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-			        <li><a href="dosen.php"><i class="fa fa-user"></i><span>Dosen</span></a></li>
-			        <li><a href="mahasiswa.php"><i class="fa fa-users"></i><span>Mahasiswa</span></a></li>
-			        <li><a href="ruangan.php"><i class="fa fa-columns"></i><span>Ruangan</span></a></li>
-			        <li><a href="matakuliah.php"><i class="fa fa-book"></i><span>Matakuliah</span></a></li>
-			        <li><a href="jurusan.php"><i class="fa fa-university"></i><span>Jurusan</span></a></li>
-			        <li><a href="jenjang.php"><i class="fa fa-graduation-cap"></i><span>Jenjang</span></a></li>
-					<li><a href="jadwal.php"><i class="fa fa-calendar"></i><span>Jadwal</span></a></li>
-					<li class="active"><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
-			        <li><a href="about.php"><i class="fa fa-info-circle"></i><span>Tentang Aplikasi</span></a></li>
-          </ul>
+			  <li ><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
+			  <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li-->
+			  <li class="active"><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
+		  </ul>	  
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -52,10 +56,10 @@ include "auth_user.php";
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            User
+            Terminal
           </h1>
           <ol class="breadcrumb">
-            <li><i class="fa fa-user-circle-o"></i> User</li>
+            <li><i class="fa fa-user"></i> Terminal</li>
           </ol>
         </section>
 
@@ -68,9 +72,10 @@ include "auth_user.php";
 
                 </div><!-- /.box-header -->
                 <div class="box-body">
-				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAddDosen" data-toggle="modal"><i class="fa fa-plus"></i> Add Dosen</button></a>
-				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAddMahasiswa" data-toggle="modal"><i class="fa fa-plus"></i> Add Mahasiswa</button></a>
+				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAddUser" data-toggle="modal"><i class="fa fa-plus"></i> Tambah User</button></a>
                   <br></br>
+
+
 				  <table id="data" class="table table-bordered table-striped table-scalable">
 						<?php
 							include "dt_user.php";
@@ -83,55 +88,67 @@ include "auth_user.php";
         </section><!-- /.content -->
 		
 		<!-- Modal Popup Dosen -->
-		<div id="ModalAddDosen" class="modal fade" tabindex="-1" role="dialog">
+		<div id="ModalAddUser" class="modal fade" tabindex="-1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Tambah User Dosen</h4>
-						<br />
-						<h6 class="modal-title">Username Dan Password = NIP Dosen</h6>
+						<h4 class="modal-title">Tambah User</h4>
+
 					</div>
+
 					<div class="modal-body">
 						<form action="user_add_dosen.php" name="modal_popup" enctype="multipart/form-data" method="post">
+						<div class="form-group">
+								<label>Nama</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-user"></i>
+										</div>
+										<input name="nama" type="text" class="form-control"/>
+									</div>
+							</div>
 							<div class="form-group">
-								<label>Usergroup</label>
+								<label>Username</label>
+
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-user"></i>
+										</div>
+										<input name="Username" type="text" class="form-control"/>
+
+									</div>
+									<h6>*username yang dimasukan = password</h6>
+							</div>
+							<!--div class="form-group">
+								<label>Password</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-user"></i>
+										</div>
+										<input name="Password" type="text" class="form-control" />
+									</div>
+							</div-->
+							<div class="form-group">
+								<label>Level</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="fa fa-user"></i>
 										</div>
 										<select name="Id_Usergroup_User" class="form-control">
-											<option value=2 selected>Dosen</option>
+											<option value=1 selected>Admin</option>
+											<option value=2 selected>User</option>
+											<option value=3 selected>KADIS</option>
 										</select>
 									</div>
 							</div>
-							<div class="form-group">
-								<label>Dosen</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-user"></i>
-										</div>
-										<select name="User_Dosen" class="form-control">
-											<?php
-												$querydosen = mysqli_query($konek, "SELECT * FROM dosen");
-												if($querydosen == false){
-													die ("Terdapat Kesalahan : ". mysqli_error($konek));
-												}
-												while($dosen = mysqli_fetch_array($querydosen)){
-													if($dosen["NIP"] != $_SESSION["Username"]){
-														echo "<option value='$dosen[NIP]'>$dosen[Nama_Dosen], Tambah Dosen untuk User dengan NIP = $dosen[NIP]</option>";
-													}
-												}
-											?>
-										</select>
-									</div>
-							</div>
+							
 							<div class="modal-footer">
-								<button class="btn btn-success" type="submit">
-									Create User
+								<button class="btn btn-success" type="submit" name="simpan" value="simpan">
+									Tambah
 								</button>
 								<button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-									Cancel
+									Batal
 								</button>
 							</div>
 						</form>
@@ -140,63 +157,8 @@ include "auth_user.php";
 			</div>
 		</div>
 		
-		<!-- Modal Popup Dosen -->
-		<div id="ModalAddMahasiswa" class="modal fade" tabindex="-1" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Tambah User Mahasiswa</h4>
-						<br />
-						<h6 class="modal-title">Username Dan Password = NIM Mahasiswa</h6>
-					</div>
-					<div class="modal-body">
-						<form action="user_add_mahasiswa.php" name="modal_popup" enctype="multipart/form-data" method="post">
-							<div class="form-group">
-								<label>Usergroup</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-user"></i>
-										</div>
-										<select name="Id_Usergroup_User" class="form-control">
-											<option value=3 selected>Mahasiswa</option>
-										</select>
-									</div>
-							</div>
-							<div class="form-group">
-								<label>Mahasiswa</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-user"></i>
-										</div>
-										<select name="User_Mahasiswa" class="form-control">
-											<?php
-												$querymahasiswa = mysqli_query($konek, "SELECT * FROM mahasiswa");
-												if($querymahasiswa == false){
-													die ("Terdapat Kesalahan : ". mysqli_error($konek));
-												}
-												while($mhs = mysqli_fetch_array($querymahasiswa)){
-													if($mhs["NIM"] != $_SESSION["Username"]){
-														echo "<option value='$mhs[NIM]'>$mhs[Nama_Mahasiswa], Tambah Mahasiswa untuk User dengan NIM = $mhs[NIM]</option>";
-													}
-												}
-											?>
-										</select>
-									</div>
-							</div>
-							<div class="modal-footer">
-								<button class="btn btn-success" type="submit">
-									Create User
-								</button>
-								<button type="reset" class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">
-									Cancel
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!-- Modal Popup Dosen Edit -->
+		<div id="ModalEditDosen" class="modal fade" tabindex="-1" role="dialog"></div>
 		
 		<!-- Modal Popup untuk delete--> 
 		<div class="modal fade" id="modal_delete">
@@ -212,12 +174,17 @@ include "auth_user.php";
 					</div>
 				</div>
 			</div>
+			</div>
+
+
+
 		</div>
-		
-    </div><!-- /.content-wrapper -->
-	<?php
+		<?php
 		include	"content_footer.php";
 	?>
+	
+
+    </div>
     </div><!-- ./wrapper -->
 	<!-- Library Scripts -->
 	<?php

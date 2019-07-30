@@ -22,13 +22,15 @@ if(isset($_POST["simpan"])) {
 		$naik	 		= $_POST["naik"];
 		$turun	 		= $_POST["turun"];
 		//$jml	 		= $_POST["jml"];
-		$hasil	 		= $naik + $turun;
+		//$hasil	 		= $naik + $turun;
 		$kel	 		= implode(', ' , $_POST['kel']);
-		//$tgl			= date("Y-m-d H:i:s");
+		$tgl			= date('d-m-Y');
 
-		mysqli_query($konek, "INSERT INTO angkutan VALUES ('$noken', '$po', '$supir', '$kp', '$uji', '$naik', '$turun', '$hasil', '$kel', CURDATE())");
+		mysqli_query($konek, "INSERT INTO angkutan VALUES ('$noken', '$po', '$supir', '$kp', '$uji', '$naik', '$turun', '$kel', $tgl)");
 		header("Location: dosen.php");
 	}
+
+		//$sql = mysqli_query ($konek, "SELECT * FROM implode ORDER BY id DESC");
 	
 		die ("Terdapat kesalahan : ". mysqli_error($konek));
 

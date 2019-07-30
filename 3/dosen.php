@@ -44,8 +44,8 @@ include "auth_user.php";
               <li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
               <li><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
 			  <li class="active"><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
-			  <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li-->
-			  <li><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
+			  <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li>
+			  <li><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li-->
 		  </ul>	  
         </section>
         <!-- /.sidebar -->
@@ -72,7 +72,7 @@ include "auth_user.php";
 
                 </div><!-- /.box-header -->
                 <div class="box-body">
-				<a href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Tambah</button></a>
+				<!--a href="#"><button class="btn btn-success" type="button" data-target="#ModalAdd" data-toggle="modal"><i class="fa fa-plus"></i> Tambah</button></a-->
 
 				<a href="#"><button class="btn btn-primary" type="button" data-target="#exampleModal" data-toggle="modal"><i class="fa fa-print"></i> Print Berdasarkan Tanggal Input</button></a>
 

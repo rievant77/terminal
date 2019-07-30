@@ -4,6 +4,7 @@ include "koneksi.php";
 
 $Username = $_POST["Username"];
 $Password = $_POST["Password"];
+//$Password = md5($_POST['Password']);
 
 $query = mysqli_query ($konek, "SELECT * FROM user WHERE Username='$Username' AND Password='$Password'");
 

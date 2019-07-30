@@ -8,7 +8,7 @@ include "auth_user.php";
 <html>
  <head>
     <meta charset="utf-8">
-    <title>IDS Akademik</title>
+    <title>Terminal Pasirhayam</title>
 	<!-- Icon -->
 	<link rel="shortcut icon" type="image/icon" href="../favicon.ico">
     <!-- Tell the browser to be responsive to screen width -->
@@ -41,11 +41,11 @@ include "auth_user.php";
             </div>
           </div><!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-				<li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
-					<li class="active"><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
-					<li><a href="jadwal.php"><i class="fa fa-calendar"></i><span>Jadwal</span></a></li>
-					<li><a href="nilai.php"><i class="fa fa-book"></i><span>Nilai Mahasiswa</span></a></li>
-					<li><a href="about.php"><i class="fa fa-info-circle"></i><span>Tentang Aplikasi</span></a></li>
+              <li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
+              <li class="active"><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+			        <li><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
+              <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li>
+					<li><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li-->
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -58,6 +58,7 @@ include "auth_user.php";
           <h1>
             Dashboard
           </h1>
+
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i> Dashboard</li>
           </ol>
@@ -68,15 +69,12 @@ include "auth_user.php";
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
-                <div class="box-header">
-					<h1><center><b>IDS Akademik</b></center></h1>
-					<center><img src="../aset/foto/ids.jpg" width="225" height="225" /></center>
-					<center><h2><b>IDS Developer Copyright &copy;  <?php echo date ('Y') ?></b></h2></center>
-					<center><h4><b>Made with <strong><i class="fa fa-code"></i></strong> and <i class="fa fa-heart"></i> by Derry Ikhsan Sholahuddin in Bandung, West Java Indonesia</b></h4></center>
+                 <div class="box-header">
+                    <h1><center><b>Sistem Informasi Pendataan Kendaraan Otobus</b></center></h1>
+                    <h3><center><b>Dinas Perhubungan Kabupaten Cianjur</b></center></h3>
+                    <center><img src="../aset/foto/sugih.jpg" width="225" height="225" /><img src="../aset/foto/dishub.jpg" width="225" height="225" /></center>>
+                  <h3><center><b>UPTD Terminal Pasirhayam</b></center></h3>
                 </div><!-- /.box-header -->
-                <div class="box-body">
-					
-                </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div><!-- /.col -->
           </div><!-- /.row -->

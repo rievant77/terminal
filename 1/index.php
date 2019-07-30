@@ -44,8 +44,8 @@ include "auth_user.php";
               <li class="header"><h4><b><center>Menu Panel</center></b></h4></li>
               <li class="active"><a href="index.php"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
 			        <li><a href="dosen.php"><i class="fa fa-user"></i><span>Angkutan</span></a></li>
-              <li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li>
-					<li><a href="#"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
+              <!--li><a href="report.php"><i class="fa fa-print"></i><span>Report</span></a></li-->
+					<li><a href="user.php"><i class="fa fa-user-circle-o"></i><span>User</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -58,6 +58,7 @@ include "auth_user.php";
           <h1>
             Dashboard
           </h1>
+
           <ol class="breadcrumb">
             <li><i class="fa fa-home"></i> Dashboard</li>
           </ol>
@@ -71,7 +72,7 @@ include "auth_user.php";
                  <div class="box-header">
                     <h1><center><b>Sistem Informasi Pendataan Kendaraan Otobus</b></center></h1>
                     <h3><center><b>Dinas Perhubungan Kabupaten Cianjur</b></center></h3>
-                    <center><img src="../aset/foto/dishub.jpg" width="225" height="225" /></center>
+                    <center><img src="../aset/foto/sugih.jpg" width="225" height="225" /><img src="../aset/foto/dishub.jpg" width="225" height="225" /></center>>
                   <h3><center><b>UPTD Terminal Pasirhayam</b></center></h3>
                 </div><!-- /.box-header -->
               </div><!-- /.box -->

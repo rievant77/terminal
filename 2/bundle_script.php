@@ -20,26 +20,26 @@
 	<!-- page script -->
     <script>
 		// Daterange Picker
-		$('#Tanggal_Lahir').daterangepicker({
+		$('#uji').daterangepicker({
 			singleDatePicker: true,
 			showDropdowns: true,
 			format: 'YYYY-MM-DD'
 		});
-		
+
 		// Data Table
-        $("#data").dataTable({
+      	$("#data").dataTable({
 			scrollX: true
 		});
 	
-		//Date Time Picker 
+		//Date Time Picker
 		$('#Jam_Mulai').datetimepicker({
 			format: 'HH:mm'
 		});
-
+		
 		$('#Jam_Selesai').datetimepicker({
 			format: 'HH:mm'
 		});
-		
+
 		//edit
 		function edit_form(data, url, key, modal){
 			var id = $(data).attr('id');
@@ -55,7 +55,7 @@
 					$(modal).modal('show');
 				}
 			});
-		} 
+		}
 
 		//delete
 		function confirm_delete(delete_url){
