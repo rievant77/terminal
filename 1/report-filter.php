@@ -62,7 +62,7 @@ $pdf->SetFont('Arial','B',11);
 $pdf->Cell(40.5,0.7,"TTD",0,10,'C');
 $pdf->Cell(40.5,0.7,"KEPALA PENGAWAS",0,10,'C');
 
-$pdf->ln(2);
+$pdf->ln(1);
 $pdf->SetFont('Arial','B',9);
 $pdf->Cell(40.5,0.7,"(_______________________)",0,10,'C');
 
